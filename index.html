@@ -1,49 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite + React</title>
+  <title>Cefor - 25 anos</title>
 </head>
 
 <body>
-  <div id="root"></div>
-  <button class="btn btn-primary">Primary button</button>
-
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-sm-8">col-sm-8</div>
-      <div class="col-sm-4">col-sm-4</div>
+  <div class="container-fluid p-0 overflow-hidden">
+    <div id="topo" class="container-xl">
+      <a href="https://camara.leg.br" target="_blank">
+        <img width="234" height="27" src="/src/assets/logo_camara_pb.png" class="mx-auto d-block" loading="lazy">
+      </a>
     </div>
-    <div class="row">
-      <div class="col-sm">col-sm</div>
-      <div class="col-sm">col-sm</div>
-      <div class="col-sm">col-sm</div>
+
+    <img src="/src/assets/cefor25anos.jpg" class="d-block img-fluid mx-auto" alt="...">
+
+    <div id="o-que-faz-o-cefor" class="container-fluid p-4 pt-sm-7 pb-sm-14 px-sm-8">
+      <div class="container-xl mx-auto p-0">
+        <div class="icones-de-compartilhamento hstack gap-2 mb-4 mb-sm-5">
+          <a href="#" target="_blank"><img src="/src/assets/share_facebook_1.png" class="img-fluid" alt=""></a>
+          <a href="#" target="_blank"><img src="/src/assets/share_whatsapp_1.png" class="img-fluid" alt=""></a>
+          <a href="#" target="_blank"><img src="/src/assets/share_twitter_1.png" class="img-fluid" alt=""></a>
+        </div>
+
+        <h2 class="texto-titulo-secao tipo-1 display-3 mb-4 mb-sm-6">O QUE FAZ O<br>CEFOR?</h2>
+
+        <div class="container-xl mx-auto p-0">
+          <div class="row row-cols-1 row-cols-xl-2 gy-5 gx-sm-9 gy-sm-6">
+            <div class="col">
+              <h3 class="titulo-coluna"><span>CAPACITAÇÃO</span> <span>01</span></h3>
+
+              <p class="texto-coluna">As ações de capacitação dos servidores acontecem por meio de cursos presenciais ou à distância, palestras e seminários ou, ainda, por meio da prospecção de oportunidades de formação e treinamento oferecidas por outras instituições, desde que se adequem às demandas da Câmara dos Deputados no que diz respeito às competências técnicas que precisam ser desenvolvidas. Ao longo desses 25 anos, o CEFOR já contabiliza mais de 3.500 cursos oferecidos, distribuídos em mais de 8.300 turmas, superando os 180 mil alunos capacitados.</p>
+            </div>
+            
+            <div class="col">
+              <h3 class="titulo-coluna"><span>PESQUISA</span> <span>02</span></h3>
+
+              <p class="texto-coluna">O Programa de Pós-Graduação, que abriga um Mestrado Profissional em Poder Legislativo. funciona como instrumento para disseminar conhecimentos legislativos e institucionais por meio da produção técnico-acadêmica, da edição e da manutenção de periódicos especializados, e da realização de ações educacionais, seminários, ciclos de estudo, conferências e iniciativas congêneres. Fundado em 2005, o Programa já formou 118 Mestres em Poder Legislativo. Sua revista digital de divulgação científica E-Legis já contabiliza 43 edições, com 398 artigos publicados.</p>
+            </div>
+            
+            <div class="col">
+              <h3 class="titulo-coluna"><span>EDUCAÇÃO PARA<br>A DEMOCRACIA</span> <span>03</span></h3>
+
+              <p class="texto-coluna">As atividades de educação para democracia - desenvolvidas diretamente ou em parceria -  tem por objetivo fortalecer o Poder Legislativo, bem como o exercício da cidadania democrática. Nessa perspectiva são promovidos programas institucionais voltados para estudantes, educadores e sociedade civil organizada, a exemplo do Parlamento Jovem Brasileiro, do Missão Pedagógica no Parlamento e da Oficina de Atuação no Parlamento, entre outros.
+                </p>
+            </div>
+
+            <div class="col">
+              <img src="/src/assets/mesa_cadeiras.png" alt="" class="d-block img-fluid mx-auto">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="acesse-a-escola-da-camara" class="container-fluid d-flex align-items-center bg-success">
+      <a class="btn bg-white rounded-0 mx-auto" href="#">Acesse a Escola da Câmara »</a>
     </div>
   </div>
 
-  <div class="container caixas">
-    <span class="border border-primary"></span>
-    <span class="border border-secondary"></span>
-    <span class="border border-success"></span>
-    <span class="border border-danger"></span>
-    <span class="border border-warning"></span>
-    <span class="border border-info"></span>
-    <span class="border border-light"></span>
-    <span class="border border-dark"></span>
-    <span class="border border-white"></span>
-  </div>
-
-  <div class="modal-body">
-    <h5>Popover in a modal</h5>
-    <p>This <a href="#" role="button" class="btn btn-secondary" data-bs-toggle="popover" title="Popover title" data-bs-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
-    <hr>
-    <h5>Tooltips in a modal</h5>
-    <p><a href="#" data-bs-toggle="tooltip" title="Tooltip">This link</a> and <a href="#" data-bs-toggle="tooltip" title="Tooltip">that link</a> have tooltips on hover.</p>
-  </div>
-  
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
