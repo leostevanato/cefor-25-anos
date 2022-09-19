@@ -17,7 +17,7 @@ $spacers: map-merge($spacers, $custom-spacers);
 @import "~bootstrap/scss/bootstrap";
 
 :root {
-    --azul-1: #C3D5Df;
+    --azul-1: #C3D6Df;
     --verde-1: #146646;
     --verde-2: #52CD4F;
     --verde-3: #0A312C;
@@ -136,6 +136,43 @@ body {
 
         @include media-breakpoint-down(sm) {
             font-size: 16px;
+        }
+    }
+}
+
+#linha-do-tempo {
+    background-color: var(--azul-1);
+
+    #timeline-main-wrapper {
+        height: 7rem;
+
+        .lvri.horizontal {
+            top: -0.6rem;
+        }
+    }
+
+    #react-chrono-timeline {
+        color: var(--verde-1);
+        
+        .timeline-horz-card-wrapper {
+            min-width: 98%;
+        }
+
+        .card-description {
+            padding: 2rem 2rem 1rem 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            text-align: center;
         }
     }
 }
