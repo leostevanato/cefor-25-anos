@@ -140,6 +140,21 @@ body {
     }
 }
 
+#breve-historico {
+    background-color: var(--verde-3);
+
+    h2 {
+        color: #51BABB;
+    }
+
+    p {
+        font-weight: 325;
+        font-size: 18px;
+        line-height: 22px;
+        color: #f5f5f5;
+    }
+}
+
 #linha-do-tempo {
     background-color: var(--azul-1);
 
@@ -153,7 +168,7 @@ body {
 
     #react-chrono-timeline {
         color: var(--verde-1);
-        
+
         .timeline-horz-card-wrapper {
             min-width: 98%;
         }
