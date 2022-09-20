@@ -22,6 +22,7 @@ $spacers: map-merge($spacers, $custom-spacers);
     --verde-2: #52CD4F;
     --verde-3: #0A312C;
     --verde-4: #51BABB;
+    --verde-5: #EBF3EC;
 }
 
 body {
@@ -178,7 +179,7 @@ body {
 }
 
 #depoimentos {
-    background-color: #EBF3EC;
+    background-color: var(--verde-5);
     
     h2 {
         color: var(--verde-3);
@@ -292,6 +293,76 @@ body {
             font-size: 1.125rem;
             line-height: 1.75rem;
             text-align: center;
+        }
+    }
+}
+
+#calendario-de-atividades-comemorativas {
+    background-color: var(--verde-1);
+
+    h2 {
+        color: var(--verde-5);
+    }
+
+    h3 {
+        color: var(--verde-5);
+        font-weight: 700;
+    }
+
+    .calendario-mes {
+        h4 {
+            color: var(--verde-5);
+            font-weight: 325;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        hr {
+            border: 0;
+            border-top: 2px solid var(--verde-5);
+            opacity: 1;
+        }
+
+        .calendario-dias{
+            .dias-semana {
+                background-color: var(--verde-5);
+                border-radius: 6.25rem;
+                padding: 2.5rem 1.5rem;
+                color: var(--verde-1);
+                text-align: center;
+
+                .dia {
+                    line-height: 100%;
+                    display: block;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                }
+
+                .semana {
+                    line-height: 1.5rem;
+                    display: block;
+                    font-size: 0.875rem;
+                    font-weight: 350;
+                }
+
+            }
+
+            .atividade {
+                color: var(--verde-5);
+
+                p {
+                    &:nth-child(1) {
+                        font-size: 1.5rem;
+                        font-weight: 325;
+                    }
+
+                    &:nth-child(2) {
+                        font-size: 1.125rem;
+                        font-weight: 325;
+                        margin-bottom: 0;
+                    }
+                }
+            }
         }
     }
 }
