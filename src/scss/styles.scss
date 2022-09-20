@@ -366,3 +366,32 @@ body {
         }
     }
 }
+
+#conheca-nossas-redes-sociais {
+    background: {
+        image: url("/src/assets/painel_do_athos_2.png");
+        position: top right;
+        repeat: no-repeat;
+        color: var(--verde-2);
+    }
+
+    h2 {
+        color: var(--verde-3);
+    }
+
+    .redes-sociais {
+        width: 660px;
+
+        .visite-rede-social {
+            font-size: 1.5rem;
+            line-height: 56px;
+            font-weight: 700;
+            color: #FFFFFF;
+
+            img {
+                width: 56px;
+                margin-right: 1rem;
+            }
+        }
+    }
+}
