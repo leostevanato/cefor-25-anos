@@ -370,6 +370,7 @@ body {
 #conheca-nossas-redes-sociais {
     background: {
         image: url("/src/assets/painel_do_athos_2.png");
+        size: auto 100%;
         position: top right;
         repeat: no-repeat;
         color: var(--verde-2);
@@ -394,4 +395,10 @@ body {
             }
         }
     }
+}
+
+#rodape {
+    background-color: var(--verde-5);
+    text-align: center;
+    font-size: 1rem;
 }
