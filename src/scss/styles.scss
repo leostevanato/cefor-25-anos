@@ -63,23 +63,45 @@ body {
 }
 
 .carousel-button-group {
-    height: 2.5rem;
+    height: 40px;
 
     .seta {
-        width: 2.5rem;
-        background: {
-            image: url("/src/assets/seta_nav.svg");
-            size: 2.5rem;
-            repeat: no-repeat;
+        width: 40px;
+        padding: 0;
+    }
+}
+
+.carousel-seta {
+    position: absolute;
+    outline: 0;
+    transition: all .5s;
+    z-index: 1000;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    &:disabled,
+    &.disabled {
+        opacity: 0.2;
+    }
+
+    svg {
+        circle {
+            fill: var(--verde-4);
         }
 
-        &.esquerda {
-
+        path {
+            stroke: var(--verde-3);
         }
+    }
 
-        &.direita {
-            transform: scaleX(-1);
-        }
+    &.esquerda {
+        left: calc(4% + 1px);
+    }
+
+    &.direita {
+        right: calc(4% + 1px);
     }
 }
 
@@ -293,6 +315,22 @@ body {
             font-size: 1.125rem;
             line-height: 1.75rem;
             text-align: center;
+        }
+    }
+}
+
+#cefor-em-numeros {
+    background-color: var(--verde-3);
+
+    h2 {
+        color: var(--verde-4);
+    }
+
+    ul {
+        &> li {
+            &> .card-imagem {
+                width: fit-content;
+            }
         }
     }
 }
