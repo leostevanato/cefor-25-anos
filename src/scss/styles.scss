@@ -236,12 +236,21 @@ body {
                     margin-left: 0.75rem;
                     margin-right: 0.75rem;
 
+                    @include media-breakpoint-down(sm) {
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
+
                     .aspas-duplas {
                         font-family: 'Gotham Condensed';
                         font-size: 11.25rem;
                         font-weight: 700;
                         height: 70px;
                         line-height: 72%;
+
+                        @include media-breakpoint-down(sm) {
+                            font-size: 8rem;
+                        }
 
                         &.cor-1 {
                             color: var(--verde-1);
