@@ -79,6 +79,7 @@ body {
     border: 0;
     width: 40px;
     height: 40px;
+    padding: 0;
     cursor: pointer;
 
     &:disabled,
@@ -97,11 +98,29 @@ body {
     }
 
     &.esquerda {
-        left: calc(4% + 1px);
+        // left: calc(4% + 1px);
+        left: 0;
     }
 
     &.direita {
-        right: calc(4% + 1px);
+        // right: calc(4% + 1px);
+        right: 0;
+    }
+}
+
+.botoes-nav-carousel {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include media-breakpoint-up(md) {
+        gap: 0;
+        margin-top: 0;
+        justify-content: space-between;
+        transform: translate(-50%, -50%);
+        top: 50%;
     }
 }
 
@@ -330,6 +349,10 @@ body {
         &> li {
             &> .card-imagem {
                 width: fit-content;
+
+                img {
+                    max-height: 90vh;
+                }
             }
         }
     }
