@@ -202,7 +202,6 @@ const linhaTempoCefor = [
 ];
 
 var linhaTempoJSON = [];
-// var linhaTempoConteudo = "";
 
 linhaTempoCefor.forEach((item, index) => {
 	let tituloCard = item.cardTitle.replace(/<\/?b>/gi, '').toUpperCase().replace(/(<\/?)(em)(>)/gi, '$1em$3');
@@ -216,21 +215,3 @@ linhaTempoCefor.forEach((item, index) => {
 });
 
 export { linhaTempoJSON };
-
-// linhaTempoCefor.forEach(item => {
-// 	let tituloCard = item.cardTitle.replace(/<\/?b>/gi, '').toUpperCase().replace(/(<\/?)(em)(>)/gi, '$1em$3');
-
-// 	linhaTempoConteudo += '<div><h3>' + tituloCard + '</h3>';
-
-// 	if (item.cardDetailedText != "") {
-// 		linhaTempoConteudo += '<p>' + item.cardDetailedText + '</p>';
-// 	}
-
-// 	linhaTempoConteudo += '</div>';
-
-// 	linhaTempoJSON.push({
-// 		"title": item.title.toString()
-// 	});
-// });
-
-// export { linhaTempoJSON, linhaTempoConteudo };

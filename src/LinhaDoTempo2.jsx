@@ -8,8 +8,6 @@ function montaScript(nome) {
   document.body.appendChild(script);
 }
 
-//console.log(linhaTempoJSON);
-
 export default () => {
   useEffect(() => {
     montaScript('util');
