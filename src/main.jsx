@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './js/main.js';
-import LinhaDoTempo from './LinhaDoTempo';
+import LinhaDoTempo2 from './LinhaDoTempo2';
 import Depoimentos from './Depoimentos';
 import CeforEmNumeros from './CeforEmNumeros';
 
@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('depoimentos-cefor')).render(
 
 ReactDOM.createRoot(document.getElementById('timeline-cefor')).render(
   <React.StrictMode>
-    <LinhaDoTempo />
+    <LinhaDoTempo2 />
   </React.StrictMode>
 );
 
