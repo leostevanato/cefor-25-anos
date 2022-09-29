@@ -456,8 +456,6 @@ body {
     }
 
     .redes-sociais {
-        width: 660px;
-
         @include media-breakpoint-down(md) {
             width: 500px;
         }
