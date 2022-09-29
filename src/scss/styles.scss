@@ -461,14 +461,17 @@ body {
         }
 
         .visite-rede-social {
-            font-size: 1.5rem;
-            line-height: 56px;
-            font-weight: 700;
-            color: #FFFFFF;
-
-            img {
-                width: 56px;
-                margin-right: 1rem;
+            a {
+                font-size: 1.5rem;
+                line-height: 56px;
+                font-weight: 700;
+                color: #FFFFFF;
+                text-decoration: none;
+            
+                img {
+                    width: 56px;
+                    margin-right: 1rem;
+                }
             }
         }
     }
