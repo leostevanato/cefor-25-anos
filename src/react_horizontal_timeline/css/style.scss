@@ -1,0 +1,326 @@
+@use 'base';
+@use 'custom-style';
+
+// @import '../../../../codyhouse-framework/main/assets/css/style.scss'; // ⚠️ make sure to import the CodyHouse framework
+
+// @import url('https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Fira+Sans:400,400italic'); // custom font
+
+// --------------------------------
+
+// Horizontal Timeline - by CodyHouse.co
+
+// --------------------------------
+
+:root {
+  // colors
+  @include base.defineColorHSL(--cd-color-1, 0, 0%, 22%); // Mine Shaft
+  @include base.defineColorHSL(--cd-color-2, 74, 93%, 32%); // Highland
+  @include base.defineColorHSL(--cd-color-3, 0, 0%, 97%); // Alabaster
+  @include base.defineColorHSL(--cd-color-4, 0, 0%, 100%); // Branco
+  @include base.defineColorHSL(--cd-color-5, 199, 30%, 82%); // #C3D6Df
+  
+  // font
+  --font-primary: 'Fira Sans', sans-serif;
+  --font-secondary: 'Playfair Display', serif;
+
+  --verde-1: #146646;
+  --verde-5: #EBF3EC;
+}
+
+// body {
+//   color: var(--cd-color-1);
+//   background-color: var(--cd-color-3);
+// }
+
+.js {
+  .cd-h-timeline {
+    opacity: 0;
+    transition: opacity 0.2s;
+    height: 346px;
+
+    ol, ul {
+      padding-left: 0;
+    }
+  }
+
+  .cd-h-timeline--loaded {
+    // show the timeline after dates position has been set (using JavaScript)
+    opacity: 1;
+  }
+
+  .cd-h-timeline__container {
+    position: relative;
+    height: 118px;
+    // max-width: 800px;
+  }
+
+  .cd-h-timeline__dates {
+    position: relative;
+    height: 100%;
+    margin: 0 40px;
+    overflow: hidden;
+
+    &::after,
+    &::before {
+      // these are used to create a shadow effect at the sides of the timeline
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      height: 100%;
+      width: 50px;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(to right, var(--cd-color-5), base.alpha(var(--cd-color-5), 0));
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(to left, var(--cd-color-5), base.alpha(var(--cd-color-5), 0));
+    }
+  }
+
+  .cd-h-timeline__line {
+    // grey line
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 58px;
+    height: 3px; // width will be set using JavaScript
+    background-color: base.lightness(var(--cd-color-4), 0.9);
+    transition: transform 0.4s;
+  }
+
+  .cd-h-timeline__filling-line {
+    // green filling line
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    // background-color: var(--cd-color-2);
+    background-color: var(--verde-1);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s;
+  }
+
+  .cd-h-timeline__date {
+    position: absolute;
+    bottom: 0; // left position will be set using JavaScript
+    z-index: 2;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+    padding-bottom: 32px;
+    color: var(--verde-1);
+    user-select: none; // improve swipe
+    text-decoration: none;
+
+    &::after {
+      // this is used to create the event spot
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -14px;
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      border-width: 3px;
+      border-style: solid;
+      border-color: var(--verde-1);
+      background-color: var(--verde-1);
+      transition: background-color 0.3s, border-color .3s;
+    }
+
+    &:hover::after {
+      background-color: var(--verde-1);
+      border-color: var(--verde-1);
+    }
+
+    @include base.breakpoint(md) {
+      // font-size: 0.7em;
+    }
+  }
+
+  .cd-h-timeline__date--selected {
+    pointer-events: none;
+
+    &::after {
+      background-color: #E8E8E7;
+      border-color: var(--verde-1);
+    }
+  }
+
+  .cd-h-timeline__date--older-event::after {
+    border-color: var(--verde-1);
+  }
+
+  .cd-h-timeline__navigation {
+    // arrows to navigate the timeline
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    // height: 34px;
+    // width: 34px;
+    // border-radius: 50%;
+    // border-width: 2px;
+    // border-style: solid;
+    // border-color: base.lightness(var(--cd-color-4), 0.9);
+    // transition: border-color 0.3s;
+
+    // &::after {
+    //   // arrow icon
+    //   content: '';
+    //   position: absolute;
+    //   height: 16px;
+    //   width: 16px;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translateX(-50%) translateY(-50%);
+    //   background: url(../img/cd-arrow.svg) no-repeat 0 0;
+    // }
+
+    // &:hover {
+    //   border-color: var(--verde-1);
+    // }
+  }
+
+  .cd-h-timeline__navigation--prev {
+    left: 0;
+  }
+
+  .cd-h-timeline__navigation--next {
+    right: 0;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .cd-h-timeline__navigation--inactive {
+    cursor: not-allowed;
+    opacity: 0.2
+
+    // &::after {
+    //   background-position: 0 -16px;
+    // }
+
+    // &:hover {
+    //   border-color: base.lightness(var(--cd-color-4), 0.9);
+    // }
+  }
+
+  .cd-h-timeline__events {
+    // container of events info
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    transition: height .4s;
+  }
+
+  .cd-h-timeline__event {
+    // single event info
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    padding: 1px 5%;
+    opacity: 0;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+  }
+
+  .cd-h-timeline__event--selected {
+    // selected event info
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .cd-h-timeline__event--enter-right,
+  .cd-h-timeline__event--leave-right {
+    // animate event info
+    animation-name: cd-enter-right;
+  }
+
+  .cd-h-timeline__event--enter-left,
+  .cd-h-timeline__event--leave-left {
+    // animate event info
+    animation-name: cd-enter-left;
+  }
+
+  .cd-h-timeline__event--leave-right,
+  .cd-h-timeline__event--leave-left {
+    animation-direction: reverse;
+  }
+
+  .cd-h-timeline__event-content {
+    // max-width: 800px;
+    min-width: 98%;
+    padding: 2rem 2rem 1rem 2rem;
+    background-color: #EBF3EC;
+  }
+
+  .cd-h-timeline__event-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--verde-1);
+  }
+
+  .cd-h-timeline__event-description {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    text-align: center;
+    color: var(--verde-1);
+  }
+
+  .cd-h-timeline__event-date {
+    display: block;
+    font-style: italic;
+    margin: var(--space-xs) auto;
+
+    &::before {
+      content: '- ';
+    }
+  }
+}
+
+@keyframes cd-enter-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes cd-enter-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+html:not(.js) .cd-h-timeline__dates,
+html:not(.js) .cd-h-timeline__navigation {
+  // hide timeline dates if js is disabled
+  display: none;
+}
