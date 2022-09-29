@@ -16,21 +16,31 @@
   @include base.defineColorHSL(--cd-color-1, 0, 0%, 22%); // Mine Shaft
   @include base.defineColorHSL(--cd-color-2, 74, 93%, 32%); // Highland
   @include base.defineColorHSL(--cd-color-3, 0, 0%, 97%); // Alabaster
-
+  @include base.defineColorHSL(--cd-color-4, 0, 0%, 100%); // Branco
+  @include base.defineColorHSL(--cd-color-5, 199, 30%, 82%); // #C3D6Df
+  
   // font
   --font-primary: 'Fira Sans', sans-serif;
   --font-secondary: 'Playfair Display', serif;
+
+  --verde-1: #146646;
+  --verde-5: #EBF3EC;
 }
 
-body {
-  color: var(--cd-color-1);
-  background-color: var(--cd-color-3);
-}
+// body {
+//   color: var(--cd-color-1);
+//   background-color: var(--cd-color-3);
+// }
 
 .js {
   .cd-h-timeline {
     opacity: 0;
     transition: opacity 0.2s;
+    height: 346px;
+
+    ol, ul {
+      padding-left: 0;
+    }
   }
 
   .cd-h-timeline--loaded {
@@ -40,7 +50,7 @@ body {
 
   .cd-h-timeline__container {
     position: relative;
-    height: 100px;
+    height: 118px;
     // max-width: 800px;
   }
 
@@ -58,17 +68,17 @@ body {
       z-index: 2;
       top: 0;
       height: 100%;
-      width: 20px;
+      width: 50px;
     }
 
     &::before {
       left: 0;
-      background: linear-gradient(to right, var(--cd-color-3), base.alpha(var(--cd-color-3), 0));
+      background: linear-gradient(to right, var(--cd-color-5), base.alpha(var(--cd-color-5), 0));
     }
 
     &::after {
       right: 0;
-      background: linear-gradient(to left, var(--cd-color-3), base.alpha(var(--cd-color-3), 0));
+      background: linear-gradient(to left, var(--cd-color-5), base.alpha(var(--cd-color-5), 0));
     }
   }
 
@@ -77,9 +87,9 @@ body {
     position: absolute;
     z-index: 1;
     left: 0;
-    top: 49px;
-    height: 2px; // width will be set using JavaScript
-    background-color: base.lightness(var(--cd-color-3), 0.9);
+    top: 58px;
+    height: 3px; // width will be set using JavaScript
+    background-color: base.lightness(var(--cd-color-4), 0.9);
     transition: transform 0.4s;
   }
 
@@ -91,7 +101,8 @@ body {
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: var(--cd-color-2);
+    // background-color: var(--cd-color-2);
+    background-color: var(--verde-1);
     transform: scaleX(0);
     transform-origin: left center;
     transition: transform 0.3s;
@@ -102,9 +113,11 @@ body {
     bottom: 0; // left position will be set using JavaScript
     z-index: 2;
     text-align: center;
-    font-size: 0.8em;
-    padding-bottom: var(--space-sm);
-    color: var(--cd-color-1);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+    padding-bottom: 32px;
+    color: var(--verde-1);
     user-select: none; // improve swipe
     text-decoration: none;
 
@@ -114,24 +127,24 @@ body {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      bottom: -5px;
-      height: 12px;
-      width: 12px;
+      bottom: -14px;
+      height: 32px;
+      width: 32px;
       border-radius: 50%;
-      border-width: 2px;
+      border-width: 3px;
       border-style: solid;
-      border-color: base.lightness(var(--cd-color-3), 0.9);
-      background-color: var(--cd-color-3);
+      border-color: var(--verde-1);
+      background-color: var(--verde-1);
       transition: background-color 0.3s, border-color .3s;
     }
 
     &:hover::after {
-      background-color: var(--cd-color-2);
-      border-color: var(--cd-color-2);
+      background-color: var(--verde-1);
+      border-color: var(--verde-1);
     }
 
     @include base.breakpoint(md) {
-      font-size: 0.7em;
+      // font-size: 0.7em;
     }
   }
 
@@ -139,13 +152,13 @@ body {
     pointer-events: none;
 
     &::after {
-      background-color: var(--cd-color-2);
-      border-color: var(--cd-color-2);
+      background-color: #E8E8E7;
+      border-color: var(--verde-1);
     }
   }
 
   .cd-h-timeline__date--older-event::after {
-    border-color: var(--cd-color-2);
+    border-color: var(--verde-1);
   }
 
   .cd-h-timeline__navigation {
@@ -154,50 +167,51 @@ body {
     z-index: 1;
     top: 50%;
     transform: translateY(-50%);
-    height: 34px;
-    width: 34px;
-    border-radius: 50%;
-    border-width: 2px;
-    border-style: solid;
-    border-color: base.lightness(var(--cd-color-3), 0.9);
-    transition: border-color 0.3s;
+    // height: 34px;
+    // width: 34px;
+    // border-radius: 50%;
+    // border-width: 2px;
+    // border-style: solid;
+    // border-color: base.lightness(var(--cd-color-4), 0.9);
+    // transition: border-color 0.3s;
 
-    &::after {
-      // arrow icon
-      content: '';
-      position: absolute;
-      height: 16px;
-      width: 16px;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      background: url(../img/cd-arrow.svg) no-repeat 0 0;
-    }
+    // &::after {
+    //   // arrow icon
+    //   content: '';
+    //   position: absolute;
+    //   height: 16px;
+    //   width: 16px;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translateX(-50%) translateY(-50%);
+    //   background: url(../img/cd-arrow.svg) no-repeat 0 0;
+    // }
 
-    &:hover {
-      border-color: var(--cd-color-2);
-    }
+    // &:hover {
+    //   border-color: var(--verde-1);
+    // }
   }
 
   .cd-h-timeline__navigation--prev {
     left: 0;
-    transform: translateY(-50%) rotate(180deg);
   }
 
   .cd-h-timeline__navigation--next {
     right: 0;
+    transform: translateY(-50%) rotate(180deg);
   }
 
   .cd-h-timeline__navigation--inactive {
     cursor: not-allowed;
+    opacity: 0.2
 
-    &::after {
-      background-position: 0 -16px;
-    }
+    // &::after {
+    //   background-position: 0 -16px;
+    // }
 
-    &:hover {
-      border-color: base.lightness(var(--cd-color-3), 0.9);
-    }
+    // &:hover {
+    //   border-color: base.lightness(var(--cd-color-4), 0.9);
+    // }
   }
 
   .cd-h-timeline__events {
@@ -249,13 +263,25 @@ body {
 
   .cd-h-timeline__event-content {
     // max-width: 800px;
+    min-width: 98%;
+    padding: 2rem 2rem 1rem 2rem;
+    background-color: #EBF3EC;
   }
 
   .cd-h-timeline__event-title {
-    color: var(--cd-color-1);
-    font-family: var(--font-secondary);
-    font-weight: 700;
-    font-size: var(--text-xxxl);
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--verde-1);
+  }
+
+  .cd-h-timeline__event-description {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    text-align: center;
+    color: var(--verde-1);
   }
 
   .cd-h-timeline__event-date {

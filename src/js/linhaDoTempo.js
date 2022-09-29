@@ -201,16 +201,36 @@ const linhaTempoCefor = [
 	}
 ];
 
+function converterHTMLEntities(string) {
+	const htmlEntities = {
+		"&": "&amp;",
+		"<": "&lt;",
+		">": "&gt;",
+		'"': "&quot;",
+		"'": "&apos;"
+	};
+
+	return string.replace(/([&<>\"'])/g, match => htmlEntities[match]);
+}
+
 var linhaTempoJSON = [];
 
 linhaTempoCefor.forEach((item, index) => {
 	let tituloCard = item.cardTitle.replace(/<\/?b>/gi, '').toUpperCase().replace(/(<\/?)(em)(>)/gi, '$1em$3');
 
+	let descricaoCard = '';
+
+	if (item.cardDetailedText != "") {
+		// descricaoCard = converterHTMLEntities(item.cardDetailedText);
+		descricaoCard = item.cardDetailedText;
+	}
+
 	linhaTempoJSON.push({
 		"id": index,
 		"linhaTitulo": item.title.toString(),
 		"cardTiulo": tituloCard,
-		"cardDescricao": (item.cardDetailedText != "")? item.cardDetailedText : ''
+		// "cardDescricao": (item.cardDetailedText != "")? item.cardDetailedText : ''
+		"cardDescricao": descricaoCard
 	});
 });
 
