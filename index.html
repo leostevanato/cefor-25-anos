@@ -96,7 +96,6 @@
           </div>
         </div>
       </div>
-
     </div>
 
     <div id="acesse-a-escola-da-camara" class="container-fluid d-flex align-items-center">
@@ -133,7 +132,7 @@
           art. 39, § 2°, da Constituição Federal.</p>
       </div>
     </div>
-    
+
     <div id="depoimentos" class="container-fluid pt-4 pb-14 pt-sm-8 px-md-4 py-md-14">
       <h2 class="container-md texto-titulo-secao tipo-1 display-3 px-sm-8 mb-lg-8 mb-4 mb-sm-6">DEPOIMENTOS</h2>
 
@@ -152,9 +151,18 @@
       <div id="cefor-em-numeros-carousel" class="container-lg position-relative"></div>
     </div>
 
+    <div id="videos" class="container-fluid pt-4 pt-sm-8 pb-14 px-md-4 py-md-14">
+      <div class="container-xl mx-auto p-0">
+        <h2 class="visually-hidden">VÍDEOS</h2>
+        
+        <div id="videos-lista"></div>
+      </div>
+    </div>
+
     <div id="calendario-de-atividades-comemorativas" class="container-fluid p-4 pt-sm-7 pb-sm-14 px-sm-8">
       <div class="container-xl mx-auto p-0">
-        <h2 class="texto-titulo-secao tipo-1 display-4 mb-lg-8 mb-4 mb-sm-6">CALENDÁRIO<br>DE ATIVIDADES<br>COMEMORATIVAS</h2>
+        <h2 class="texto-titulo-secao tipo-1 display-4 mb-lg-8 mb-4 mb-sm-6">CALENDÁRIO<br>DE
+          ATIVIDADES<br>COMEMORATIVAS</h2>
 
         <h3 class="display-6 mb-4">2022</h3>
 
@@ -184,7 +192,8 @@
                 <span class="semana">sex</span>
               </div>
               <div class="atividade">
-                <p>Palestra comemorativa CEFOR 25 anos - O projeto arquitetônico do prédio do CEFOR, com Maurício Matta</p>
+                <p>Palestra comemorativa CEFOR 25 anos - O projeto arquitetônico do prédio do CEFOR, com Maurício Matta
+                </p>
 
                 <p>às 15h, no Auditório do CEFOR</p>
               </div>
@@ -221,15 +230,19 @@
 
         <div class="redes-sociais d-flex flex-wrap gap-5">
           <div class="visite-rede-social">
-            <a href="https://www.instagram.com/escoladacamara" target="_blank"><img src="/src/assets/visite_instagram.png" alt="Instagram @escoladacamara"> @escoladacamara</a>
+            <a href="https://www.instagram.com/escoladacamara" target="_blank"><img
+                src="/src/assets/visite_instagram.png" alt="Instagram @escoladacamara"> @escoladacamara</a>
           </div>
-          
+
           <div class="visite-rede-social">
-            <a href="https://www.youtube.com/escoladacamara" target="_blank"><img src="/src/assets/visite_youtube.png" alt="Youtube @escoladacamara"> @escoladacamara</a>
+            <a href="https://www.youtube.com/escoladacamara" target="_blank"><img src="/src/assets/visite_youtube.png"
+                alt="Youtube @escoladacamara"> @escoladacamara</a>
           </div>
-          
+
           <div class="visite-rede-social">
-            <a href="https://www.facebook.com/escoladacamaradeputados" target="_blank"><img src="/src/assets/visite_facebook.png" alt="Facebook @escoladacamaradeputados"> @escoladacamaradeputados</a>
+            <a href="https://www.facebook.com/escoladacamaradeputados" target="_blank"><img
+                src="/src/assets/visite_facebook.png" alt="Facebook @escoladacamaradeputados">
+              @escoladacamaradeputados</a>
           </div>
         </div>
       </div>
@@ -237,19 +250,39 @@
 
     <div id="rodape" class="container-fluid p-4 pt-sm-7 pb-sm-14 px-sm-8">
       <div class="container-xl mx-auto p-0">
-        <img class="mb-4" src="/src/assets/cefor_camara_logo.png" alt="Logo Centro de Formação, Treinamento e Aperfeiçoamento (CEFOR) - Câmara dos Deputados">
+        <img class="mb-4" src="/src/assets/cefor_camara_logo.png"
+          alt="Logo Centro de Formação, Treinamento e Aperfeiçoamento (CEFOR) - Câmara dos Deputados">
 
         <p class="mb-5"><strong>Centro de Formação, Treinamento e Aperfeiçoamento (CEFOR) - 2022</strong></p>
 
         <p><strong>Endereço</strong>
           <br>
-          Via N3, Projeção L, Setor de Garagens Ministeriais Norte, Complexo Avançado da Câmara dos Deputados, Bloco B, Sala 19 Brasília-DF
-          - CEP 70160-900</p>
+          Via N3, Projeção L, Setor de Garagens Ministeriais Norte, Complexo Avançado da Câmara dos Deputados, Bloco B,
+          Sala 19 Brasília-DF
+          - CEP 70160-900
+        </p>
       </div>
     </div>
   </div>
 
   <script type="module" src="/src/main.jsx"></script>
+  <script>
+    function rolarParaElemento(el, topo = 0) {
+      var element = document.getElementById(el);
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset - topo;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+
+    document.addEventListener('keypress', (tecla) => {
+      if (tecla.key === "e") {
+        rolarParaElemento("videos", 100);
+      }
+    });
+  </script>
 </body>
 
 </html>

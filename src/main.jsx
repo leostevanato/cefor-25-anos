@@ -4,6 +4,7 @@ import './js/main.js';
 import LinhaDoTempo2 from './LinhaDoTempo2';
 import Depoimentos from './Depoimentos';
 import CeforEmNumeros from './CeforEmNumeros';
+import Videos from './Videos';
 
 ReactDOM.createRoot(document.getElementById('depoimentos-cefor')).render(
   <React.StrictMode>
@@ -19,4 +20,8 @@ ReactDOM.createRoot(document.getElementById('timeline-cefor')).render(
 
 ReactDOM.createRoot(document.getElementById('cefor-em-numeros-carousel')).render(
   <CeforEmNumeros />
+);
+
+ReactDOM.createRoot(document.getElementById('videos-lista')).render(
+  <Videos />
 );

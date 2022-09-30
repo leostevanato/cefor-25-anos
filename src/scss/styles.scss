@@ -372,6 +372,74 @@ body {
     }
 }
 
+#videos {
+    min-height: 1480px;
+
+    background: {
+        image: url("/src/assets/fundo_videos.jpg");
+        size: auto 100%;
+        position: bottom right;
+        repeat: no-repeat;
+        color: var(--verde-5);
+    }
+
+    @include media-breakpoint-down(xl) {
+        background-position: bottom left;
+    }
+
+    .row {
+        gap: 56px 88px;
+
+        .col {
+            width: 451px;
+            height: 381px;
+            padding: 32px;
+            border-bottom: 4px solid var(--verde-3);
+
+            .titulo-coluna {
+                margin-bottom: 1.5rem;
+                font-size: 1rem;
+                color: var(--verde-3);
+
+                span {
+                    &:first-child {
+                        font-style: italic;
+                    }
+        
+                    &:nth-child(2) {
+                        font-weight: 700;
+                    }
+                }
+            }
+        
+            .texto-coluna {
+                font-size: 30px;
+                font-weight: 325;
+                line-height: 34px;
+                color: var(--verde-3);
+
+                @include media-breakpoint-down(sm) {
+                    font-size: 20px;
+                }
+            }
+
+            .link-assistir-no-youtube {
+                bottom: 32px;
+
+                a {
+                    text-decoration: none;
+                    color: var(--verde-3);
+
+                    font: {
+                        size: 16px;
+                        weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}
+
 #calendario-de-atividades-comemorativas {
     background-color: var(--verde-1);
 
