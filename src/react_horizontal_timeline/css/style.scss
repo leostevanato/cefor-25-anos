@@ -38,6 +38,14 @@
     transition: opacity 0.2s;
     height: 346px;
 
+    // @include base.breakpoint(lg) {
+    //   height: 500px;
+    // }
+
+    @media (max-width: 768px) {
+      height: 500px;
+    }
+
     ol, ul {
       padding-left: 0;
     }
@@ -275,6 +283,11 @@
     margin-top: 0;
     margin-bottom: 1rem;
     color: var(--verde-1);
+
+    // @include base.breakpoint(sm) {
+    @media (max-width: 576px) {
+      font-size: 1.2rem;
+    }
   }
 
   .cd-h-timeline__event-description {
@@ -282,6 +295,11 @@
     line-height: 1.75rem;
     text-align: center;
     color: var(--verde-1);
+
+    // @include base.breakpoint(sm) {
+    @media (max-width: 576px) {
+      font-size: 1rem;
+    }
   }
 
   .cd-h-timeline__event-date {
