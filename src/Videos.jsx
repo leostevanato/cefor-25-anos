@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import IconeYoutube from './assets/icone_youtube.png';
 
 export default () => {
 	const [error, setError] = useState(null);
@@ -43,10 +44,10 @@ export default () => {
 
 								<p className="texto-coluna">{ item.titulo }</p>
 
-								{ item.idYoutube &&
+								{ //item.idYoutube &&
 									<div className="link-assistir-no-youtube position-absolute">
 										<a href={ "https://www.youtube.com/watch?v=" + item.idYoutube } target="_blank">
-											<img className="align-text-top me-1" src="/src/assets/icone_youtube.png" alt="Ícone do Youtube" /> ASSISTIR »
+											<img className="align-text-top me-1" src={ IconeYoutube } alt="Ícone do Youtube" /> ASSISTIR »
 										</a>
 									</div>
 								}
