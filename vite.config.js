@@ -10,5 +10,9 @@ export default defineConfig({
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
       '~codyhouse-framework': path.resolve(__dirname, 'node_modules/codyhouse-framework'),
     }
+  },
+  base: '/cefor25anos/',
+  server: {
+    base: '/cefor25anos/'
   }
 });
