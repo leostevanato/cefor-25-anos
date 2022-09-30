@@ -2,18 +2,20 @@ import { useEffect } from 'react';
 import ButtonSeta from './ButtonSeta';
 import { linhaTempoJSON } from "./js/linhaDoTempo";
 
-function montaScript(nome) {
+function montaScript(nome, path) {
   let script = document.createElement('script');
-  script.src = '/src/react_horizontal_timeline/js/' + nome + '.js';
+  script.src = path + nome + '.js';
   script.id = nome + '-js';
   document.body.appendChild(script);
 }
 
 export default () => {
+  let caminho = '/cefor25anos/react_horizontal_timeline/js/';
+
   useEffect(() => {
-    montaScript('util');
-    montaScript('swipe-content');
-    montaScript('main');
+    montaScript('util', caminho);
+    montaScript('swipe-content', caminho);
+    montaScript('main', caminho);
 
     setTimeout(() => {
       window.scrollTo(0, 0);

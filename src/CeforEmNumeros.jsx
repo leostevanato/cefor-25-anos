@@ -32,7 +32,7 @@ const imagensCeforNumeros = [
 
 const listaImagens = imagensCeforNumeros.map((item, index) => {
 	return <div key={ index } className="card-imagem mx-auto">
-		<img className="img-fluid mx-auto d-block" src={ '/src/cefor_em_numeros/' + item.imagem } alt={ item.alt } />
+		<img className="img-fluid mx-auto d-block" src={ '/cefor25anos/cefor_em_numeros/' + item.imagem } alt={ item.alt } />
 	</div>
 });
 
