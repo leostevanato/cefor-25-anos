@@ -70,3 +70,24 @@ Abrir o arquivo index.html (na raiz do projeto) e adicionar algum código Bootst
 Exceutar o comando ```npm run dev```.
 
 Divirta-se!
+
+
+## Como fazer a build e enviar ao servidor web:
+
+Se o projeto for ser hospedado em uma subpasta no servidor (Ex: https://ead.camara.leg.br/cefor25anos/), devemos inidcar a subpasta **/cefor25anos/** como base. Nesse caso, devemos adicionar as seguintes linhas ao arquivo **vite.config.js** contendo o nome da subpasta. Devemos colocar / no início e fim do nome da pasta.
+```
+base: '/cefor25anos/',
+server: {
+  base: '/cefor25anos/'
+}
+```
+
+Subpastas que estejam dentro da pasta src e que não façam parte do padrão não são copiadas pra pasta dist automaticamente. Uma forma de resolver isso é usar a pasta **public**, pois tudo que está nela é copiado pra raiz da pasta dist. Arquivos estáticos, como por exemplo imagens, arquivos js e css prontos, podem ser colocados na pasta public, mesmo que eles estejam dentro de subpastas. Arquivos dinâmicos, como por exemplo scss, não podem ser colocados nessa pasta, pois não serão compilados.
+
+Rodar o comando ```npm run build``` para gerar a pasta **dist**.
+
+Rodar o comando ```npm run preview``` para testar se tudo está funcionando.
+
+Enviar o conteudo da pasta **dist** para a pasta **/cefor25anos/** no servidor.
+
+Fim.
