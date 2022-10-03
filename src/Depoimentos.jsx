@@ -26,7 +26,7 @@ let despoimentosJSON = [
 		id: 4,
 		nome: 'Fabio Almeida Lopes',
 		areaOuInstituicao: 'Consultoria Legislativa - Conle',
-		depoimento: 'As diferentes vertentes de capacitação em Processo Legislativo promovidas pelo CEFOR são ferramentas silenciosas que promovem uma contínua e significativa transformação na Casa. Ao oferecer um ambiente formativo de debate teórico e prático sobre o métier central da Câmara dos Deputados, possibilita não apenas ao quadro permanente mas, de forma crucial também aos servidores temporários, uma trilha de desenvolvimento profissional e pessoal. Assim, os gestores das áreas relacionadas ao processo legislativo podem contar com um corpo técnico capacitado. Ao mesmo tempo, o ambiente formativo também cria uma cultura de reflexão que, em última análise, ajuda a promover a legitimidade das normas produzidas pelo Parlamento.'
+		depoimento: 'As diferentes vertentes de capacitação em Processo Legislativo promovidas pelo CEFOR são ferramentas silenciosas que promovem uma contínua e significativa transformação na Casa. Ao oferecer um ambiente formativo de debate teórico e prático sobre o <em>métier</em> central da Câmara dos Deputados, possibilita não apenas ao quadro permanente mas, de forma crucial também aos servidores temporários, uma trilha de desenvolvimento profissional e pessoal. Assim, os gestores das áreas relacionadas ao processo legislativo podem contar com um corpo técnico capacitado. Ao mesmo tempo, o ambiente formativo também cria uma cultura de reflexão que, em última análise, ajuda a promover a legitimidade das normas produzidas pelo Parlamento.'
 	},
 	{
 		id: 5,
@@ -38,7 +38,7 @@ let despoimentosJSON = [
 		id: 6,
 		nome: 'Guilherme Curi',
 		areaOuInstituicao: 'Departamento de Polícia Legislativa - Depol',
-		depoimento: 'Durante esses 25 anos, estive sempre bem próximo do CEFOR. Inicialmente participei como aluno; mais tarde como voluntário em seus serviços administrativos e, posteriormente, como facilitador e docente. Em 2014 assumi o Escritório de Treinamento e Projetos do Depol. Até aquele momento, inexistia uma área interna que tivesse por finalidade dar suporte ao CEFOR na formação, desenvolvimento e treinamento de nossos agentes, tendo em vista que  capacitar policiais era algo bastante novo no escopo de suas atividades. Em pouco tempo nos tornamos um dos maiores clientes do CEFOR, sempre em colaboração e parceria. Percebo que todo o aprimoramento recente de nossa polícia - que acredito ser uma das mais qualificadas do Brasil - está estreitamente ligado às ações de capacitação patrocinadas e apoiadas pelo CEFOR, que primam sempre pela qualidade, profissionalismo, amizade, atenção, inovação e promoção contínua de nossa polícia. Sou um profundo admirador desse órgão, percebendo-o como um lugar de prosperidade e progresso dentro da Câmara dos Deputados. Parabéns ao CEFOR e a todos os seus colaboradores por todo esse sucesso!'
+		depoimento: 'Durante esses 25 anos, estive sempre bem próximo do CEFOR. Inicialmente participei como aluno; mais tarde como voluntário em seus serviços administrativos e, posteriormente, como facilitador e docente. Em 2014 assumi o Escritório de Treinamento e Projetos do Depol. Até aquele momento, inexistia uma área interna que tivesse por finalidade dar suporte ao CEFOR na formação, desenvolvimento e treinamento de nossos agentes. E em pouco tempo nos tornamos um dos maiores clientes do CEFOR. Percebo que todo o aprimoramento recente de nossa polícia - que acredito ser uma das mais qualificadas do Brasil - está ligado às ações de capacitação patrocinadas e apoiadas pelo CEFOR, que primam sempre pela qualidade, profissionalismo, amizade, atenção e inovação. Sou um profundo admirador desse órgão, percebendo-o como um lugar de prosperidade e progresso dentro da Câmara dos Deputados. Parabéns ao CEFOR e a todos os seus colaboradores por todo esse sucesso!'
 	},
 	{
 		id: 7,
@@ -79,27 +79,29 @@ const listaDepoimentos = despoimentosJSON.map((item, index) => {
 	let classeCor = 'cor-' + ((index % 4) + 1); // Cor do box sequencial
 	// let classeCor = 'cor-' + ((item.id % 4) + 1); // Cor do box fixo por item
 
-	return <div key={ item.id } className="card-depoimento">
-		<div className={ 'aspas-duplas ' + classeCor }>“</div>
-		<div className={ 'conteudo ' + classeCor }>
-			<span className="depoimento">{ item.depoimento }</span>
-			<br /><br />
-			<span className="nome">{ item.nome }</span>
-			<br />
-			<span className="area-ou-instituicao">{ item.areaOuInstituicao }</span>
+	return (
+		<div key={ item.id } className="card-depoimento">
+			<div className={ 'aspas-duplas ' + classeCor }>“</div>
+			<div className={ 'conteudo ' + classeCor }>
+				<span className="depoimento" dangerouslySetInnerHTML={ { __html: item.depoimento } } />
+				<br /><br />
+				<span className="nome">{ item.nome }</span>
+				<br />
+				<span className="area-ou-instituicao">{ item.areaOuInstituicao }</span>
+			</div>
 		</div>
-	</div>
+	)
 });
 
 const responsive = {
 	superLargeDesktop: {
 		// the naming can be any, depends on you.
-		breakpoint: { max: 4000, min: 3000 },
-		items: 5
+		breakpoint: { max: 4000, min: 2000 },
+		items: 4
 	},
 	desktop: {
 		breakpoint: { max: 3000, min: 1320 },
-		items: 3
+		items: 2
 	},
 	tablet: {
 		breakpoint: { max: 1320, min: 896 },
