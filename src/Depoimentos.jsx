@@ -56,7 +56,7 @@ let despoimentosJSON = [
 		id: 9,
 		nome: 'Patrícia Nogueira',
 		areaOuInstituicao: 'Escola do Legislativo do Distrito Federal',
-		depoimento: 'A Escola do Legislativo da Câmara Legislativa do Distrito Federal (Elegis) vem cumprimentar os nossos parceiros do Cefor pelos seus 25 anos de trabalho. Só temos de enaltecer os seus bons serviços prestados à sociedade e ao fortalecimento da democracia em nosso país, através da educação legislativa. Como parceiros de primeira hora, somos testemunhas do alto nível de seus cursos de pós-graduação. Nossos servidores - e também os de outras instituições parceiras - muito têm ganhado com a proficiência de seus programas. Fica aqui o reconhecimento público da ELEGIS e da Câmara Legislativa do Distrito Federal. Vida longa ao Cefor!'
+		depoimento: 'A Escola do Legislativo da Câmara Legislativa do Distrito Federal (Elegis) vem cumprimentar os nossos parceiros do Cefor pelos seus 25 anos de trabalho. Só temos de enaltecer os seus bons serviços prestados à sociedade e ao fortalecimento da democracia em nosso país, por meio da educação legislativa. Como parceiros de primeira hora, somos testemunhas do alto nível de seus cursos de pós-graduação. Nossos servidores - e também os de outras instituições parceiras - muito têm ganhado com a proficiência de seus programas. Fica aqui o reconhecimento público da ELEGIS e da Câmara Legislativa do Distrito Federal. Vida longa ao Cefor!'
 	},
 	{
 		id: 10,
