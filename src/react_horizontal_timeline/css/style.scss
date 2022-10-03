@@ -17,13 +17,15 @@
   @include base.defineColorHSL(--cd-color-2, 74, 93%, 32%); // Highland
   @include base.defineColorHSL(--cd-color-3, 0, 0%, 97%); // Alabaster
   @include base.defineColorHSL(--cd-color-4, 0, 0%, 100%); // Branco
-  @include base.defineColorHSL(--cd-color-5, 199, 30%, 82%); // #C3D6Df
+  // @include base.defineColorHSL(--cd-color-5, 199, 30%, 82%); // #C3D6Df
+  @include base.defineColorHSL(--cd-color-5, 128, 25%, 94%); // #EBF3EC
   
   // font
   --font-primary: 'Fira Sans', sans-serif;
   --font-secondary: 'Playfair Display', serif;
 
-  --verde-1: #146646;
+  --azul-1: #C3D6Df;
+  --verde-3: #0A312C;
   --verde-5: #EBF3EC;
 }
 
@@ -109,8 +111,7 @@
     top: 0;
     height: 100%;
     width: 100%;
-    // background-color: var(--cd-color-2);
-    background-color: var(--verde-1);
+    background-color: var(--verde-3);
     transform: scaleX(0);
     transform-origin: left center;
     transition: transform 0.3s;
@@ -125,7 +126,7 @@
     font-weight: 700;
     line-height: 2rem;
     padding-bottom: 32px;
-    color: var(--verde-1);
+    color: var(--verde-3);
     user-select: none; // improve swipe
     text-decoration: none;
 
@@ -141,14 +142,14 @@
       border-radius: 50%;
       border-width: 3px;
       border-style: solid;
-      border-color: var(--verde-1);
-      background-color: var(--verde-1);
+      border-color: var(--verde-3);
+      background-color: var(--verde-3);
       transition: background-color 0.3s, border-color .3s;
     }
 
     &:hover::after {
-      background-color: var(--verde-1);
-      border-color: var(--verde-1);
+      background-color: var(--verde-3);
+      border-color: var(--verde-3);
     }
 
     @include base.breakpoint(md) {
@@ -161,12 +162,12 @@
 
     &::after {
       background-color: #E8E8E7;
-      border-color: var(--verde-1);
+      border-color: var(--verde-3);
     }
   }
 
   .cd-h-timeline__date--older-event::after {
-    border-color: var(--verde-1);
+    border-color: var(--verde-3);
   }
 
   .cd-h-timeline__navigation {
@@ -273,7 +274,7 @@
     // max-width: 800px;
     min-width: 98%;
     padding: 2rem 2rem 1rem 2rem;
-    background-color: #EBF3EC;
+    background-color: var(--azul-1);
   }
 
   .cd-h-timeline__event-title {
@@ -282,7 +283,7 @@
     text-align: center;
     margin-top: 0;
     margin-bottom: 1rem;
-    color: var(--verde-1);
+    color: var(--verde-3);
 
     // @include base.breakpoint(sm) {
     @media (max-width: 576px) {
@@ -294,7 +295,7 @@
     font-size: 1.125rem;
     line-height: 1.75rem;
     text-align: center;
-    color: var(--verde-1);
+    color: var(--verde-3);
 
     // @include base.breakpoint(sm) {
     @media (max-width: 576px) {
