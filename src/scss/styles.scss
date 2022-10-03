@@ -26,7 +26,11 @@ $spacers: map-merge($spacers, $custom-spacers);
 }
 
 body {
-    font-family: 'Gotham';
+    font-family: 'Gotham', sans-serif;
+}
+
+em {
+    font-style: italic;
 }
 
 .caixas [class^="border"] {
