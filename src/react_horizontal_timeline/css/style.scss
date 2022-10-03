@@ -38,14 +38,14 @@
   .cd-h-timeline {
     opacity: 0;
     transition: opacity 0.2s;
-    height: 346px;
+    // height: 346px;
 
     // @include base.breakpoint(lg) {
     //   height: 500px;
     // }
 
     @media (max-width: 768px) {
-      height: 500px;
+      // height: 500px;
     }
 
     ol, ul {
