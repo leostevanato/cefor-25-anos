@@ -7,7 +7,7 @@ const linhaTempoCefor = [
 	{
 		"title": 1997,
 		"cardTitle": "<b>Institucionalização do</b> Centro de Formação, Treinamento e Aperfeiçoamento – <b>Cefor</b>",
-		"cardDetailedText": "O Cefor tem com a missão qualificar os servidores da Câmara dos Deputados e promover a Educação Legislativa, com vistas ao fortalecimento da democracia com foco no poder legislativo."
+		"cardDetailedText": "O Cefor tem como missão qualificar os servidores da Câmara dos Deputados e promover a Educação Legislativa, com vistas ao fortalecimento da democracia com foco no poder legislativo."
 	},
 	{
 		"title": 2000,
@@ -56,8 +56,8 @@ const linhaTempoCefor = [
 	},
 	{
 		"title": 2005,
-		"cardTitle": "Institucionalização do <b>Programa de Pós-Graduação</b> da Câmara dos Deputados",
-		"cardDetailedText": "A partir do credenciamento do Cefor junto ao MEC para oferta de cursos <em>lato sensu</em>, o programa oferece suas duas primeiras especializações: “Processo Legislativo” e “Instituições e Processos Políticos do Legislativo"
+		"cardTitle": "Institucionalização do <b>Programa de Pós-Graduação</b> da <br>Câmara dos Deputados",
+		"cardDetailedText": "A partir do credenciamento do Cefor junto ao MEC para oferta de cursos <em>lato sensu</em>, o programa oferece suas duas primeiras especializações: “Processo Legislativo” e “Instituições e Processos Políticos do Legislativo”"
 	},
 	{
 		"title": 2006,
@@ -76,7 +76,7 @@ const linhaTempoCefor = [
 	},
 	{
 		"title": 2006,
-		"cardTitle": "Lançamento dos primeiros <b>Grupos de Pesquisa e Extensão</b> do Programa <b>de Pós-Graduação</b>",
+		"cardTitle": "Lançamento dos primeiros <b>Grupos de Pesquisa e Extensão</b> do <br>Programa <b>de Pós-Graduação</b>",
 		"cardDetailedText": ""
 	},
 	{
@@ -101,12 +101,12 @@ const linhaTempoCefor = [
 	},
 	{
 		"title": 2010,
-		"cardTitle": "Realizada a <b>I Jornada de Pesquisa e Extensão</b> do Programa <b>de Pós-Graduação</b> da Câmara dos Deputados",
+		"cardTitle": "Realizada a <b>I Jornada de Pesquisa e Extensão</b> do Programa <b>de <br>Pós-Graduação</b> da Câmara dos Deputados",
 		"cardDetailedText": ""
 	},
 	{
 		"title": 2010,
-		"cardTitle": "EaD da Câmara ganha o <b>prêmio</b> E-Learning Brasil na categoria '<b>Referência Nacional</b>'",
+		"cardTitle": "EaD da Câmara ganha o <b>prêmio</b> E-Learning Brasil na categoria <br>'<b>Referência Nacional</b>'",
 		"cardDetailedText": ""
 	},
 	{
@@ -117,7 +117,7 @@ const linhaTempoCefor = [
 	{
 		"title": 2011,
 		"cardTitle": "Primeira edição do “<b>Estágio-Cidadão</b>”",
-		"cardDetailedText": "Programa educativo volta aos estagiários da Câmara dos Deputados, em que universitários de diferentes áreas aprendem sobre o processo legislativo e as funções do Parlamento."
+		"cardDetailedText": "Programa educativo voltado aos estagiários da Câmara dos Deputados, em que universitários de diferentes áreas aprendem sobre o processo legislativo e as funções do Parlamento."
 	},
 	{
 		"title": 2012,
@@ -147,7 +147,7 @@ const linhaTempoCefor = [
 	{
 		"title": 2015,
 		"cardTitle": "Primeira edição do “<b>Estágio Participação</b>”",
-		"cardDetailedText": "Programa educativo que incentiva a participação política e cidadã por meio acompanhamento das atividades parlamentares e busca ativa de informações sobre o Legislativo."
+		"cardDetailedText": "Programa educativo que incentiva a participação política e cidadã por meio do acompanhamento das atividades parlamentares e busca ativa de informações sobre o Legislativo."
 	},
 	{
 		"title": 2017,
@@ -166,18 +166,18 @@ const linhaTempoCefor = [
 	},
 	{
 		"title": 2019,
-		"cardTitle": "Lançamento da nova plataforma de Ensino a Distância da Câmara dos Deputados: <b>ELEVE</b>",
+		"cardTitle": "Lançamento da nova plataforma de Ensino a Distância da <br>Câmara dos Deputados: <b>ELEVE</b>",
 		"cardDetailedText": ""
 	},
 	{
 		"title": 2020,
 		"cardTitle": "Lançamento da nova versão do <b>Portal EVC</b>",
-		"cardDetailedText": "Portal educativo com conteúdo multimidia de Educação para Democracia"
+		"cardDetailedText": "Portal educativo com conteúdo multimídia de Educação para Democracia"
 	},
 	{
 		"title": 2020,
 		"cardTitle": "<b>Mudança de paradigma</b>. Cursos e atividades presenciais do Cefor passam a ser realizados a distância",
-		"cardDetailedText": "A adaptação for necessária por conta do isolamento social durante a pandemia de COVID-19"
+		"cardDetailedText": "A adaptação foi necessária por conta do isolamento social durante a pandemia de COVID-19"
 	},
 	{
 		"title": 2021,
@@ -217,6 +217,8 @@ var linhaTempoJSON = [];
 
 linhaTempoCefor.forEach((item, index) => {
 	let tituloCard = item.cardTitle.replace(/<\/?b>/gi, '').toUpperCase().replace(/(<\/?)(em)(>)/gi, '$1em$3');
+	
+	tituloCard = tituloCard.replace(/EAD/g, 'EaD');
 
 	let descricaoCard = '';
 

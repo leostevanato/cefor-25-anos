@@ -30,7 +30,7 @@ export default () => {
     }, 500);
   }, []);
 
-  const agruparAnos = true;
+  const agruparAnos = false;
   const linhaItems = [];
   const conteudoItems = [];
   const conta = linhaTempoJSON.length;
@@ -53,9 +53,8 @@ export default () => {
 
     conteudoItems.push(<li key={ (conta + index) } className={ "cd-h-timeline__event text-component" + ((index === 0) ? " cd-h-timeline__event--selected" : "") }>
       <div className="cd-h-timeline__event-content container">
-        <h3 className="cd-h-timeline__event-title">{ item.cardTiulo }</h3>
-        <p className="cd-h-timeline__event-description color-contrast-medium" dangerouslySetInnerHTML={ { __html: item.cardDescricao } }>
-        </p>
+        <h3 className="cd-h-timeline__event-title" dangerouslySetInnerHTML={ { __html: item.cardTiulo } } />
+        <p className="cd-h-timeline__event-description color-contrast-medium" dangerouslySetInnerHTML={ { __html: item.cardDescricao } } />
       </div>
     </li>);
   });
