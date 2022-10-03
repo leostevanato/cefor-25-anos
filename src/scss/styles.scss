@@ -142,7 +142,8 @@ em {
         span {
             &:first-child {
                 display: inline-block;
-                font-weight: 325;
+                // font-weight: 325;
+                font-weight: 400;
                 font-size: 30px;
                 line-height: 36px;
                 color: var(--verde-1);
@@ -155,7 +156,7 @@ em {
 
             &:last-child {
                 display: inline-block;
-                font-weight: 350;
+                // font-weight: 350;
                 font-size: 128px;
                 margin-left: -65px;
                 vertical-align: bottom;
@@ -196,7 +197,8 @@ em {
 
     .btn {
         padding: 16px 27px;
-        font-weight: 350;
+        // font-weight: 350;
+        font-weight: 500;
         font-size: 24px;
         line-height: 1;
         color: var(--verde-2);
@@ -381,6 +383,7 @@ em {
 }
 
 #videos {
+    display: none;
     min-height: 1480px;
 
     background: {
@@ -549,7 +552,11 @@ em {
 
     .redes-sociais {
         @include media-breakpoint-down(md) {
-            // width: 500px;
+            width: 500px;
+        }
+
+        @include media-breakpoint-between(md, xxl) {
+            width: 690px;
         }
 
         .visite-rede-social {
