@@ -2,69 +2,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import React from 'react';
 import BotoesNavCarousel from "./BotoesNavCarouselDepoimentos";
-
-let despoimentosJSON = [
-	{
-		id: 1,
-		nome: 'Romulo de Sousa Mesquita',
-		areaOuInstituicao: 'Diretoria Administrativa - Dirad',
-		depoimento: 'Participei do processo para pensar e elaborar o Programa de Educação Continuada em Aquisições e já imaginava diversos ganhos para a Administração. Porém, o programa vem ganhando, em cada realização, mais corpo e gerando mais benefícios. A troca de experiências entre os servidores de diferentes setores permitiu que o processo de aquisições fosse pensado de forma sistêmica, sendo aperfeiçoado e, principalmente, simplificado com benefícios tangíveis. Destinar um espaço estruturado para desenvolver atividades voltadas ao processo de contratações e aquisições favorece a institucionalização desse conhecimento, tão importante para orientar novos servidores nessas atividades, visto que é um processo extremamente técnico o que demanda tempo para o seu aprendizado.'
-	},
-	{
-		id: 2,
-		nome: 'Darlan Eterno Silverio de Sousa',
-		areaOuInstituicao: 'Centro de Documentação e Informação - Cedi',
-		depoimento: 'Os treinamentos no Sistema eDoc alcançaram todos os setores da Casa, inclusive os gabinetes, e contribuíram para o conhecimento da qualidade do sistema. Trouxeram ao usuário mais confiança para fazer uso das funcionalidades e aderir à nova cultura de criação de documentos em meio digital, com consequente abandono das "famosas" pastas rosas. Esta adesão trouxe mais celeridade aos processos de criação e de análise de documentos pelas diversas áreas da Casa e facilitou a gestão destes documentos por parte da Coordenação de Arquivo. E mais: os cursos abriram uma "porta de entrada" para que a equipe do projeto eDoc pudesse entender as necessidades das diversas áreas da Câmara, pois as informações coletadas em sala de aula foram usadas para a implementação de melhorias no sistema e também para demonstrar a importância do papel de cada servidor nesta mudança de paradigma.'
-	},
-	{
-		id: 3,
-		nome: 'Simone Sarkis Teixeira Bergo',
-		areaOuInstituicao: 'Departamento de Apoio Parlamentar - Deapa',
-		depoimento: 'As ações de formação do Cefor junto ao Secretários Parlamentares são de grande importância para a qualificação desse grupo de servidores tão expressivo na Câmara dos Deputados. A variedade de temas e de formatos dos cursos favorece a participação conforme área de interesse e as peculiaridades de cada gabinete - o que contribui para o aprimoramento dos processos de trabalho, a colaboração entre os pares e a eficiência das atividades de suporte ao mandato parlamentar. Também a capacitação oferecida em apoio ao lançamento de novos serviços fortalece a adesão às inovações promovidas pela Casa. Parabéns ao CEFOR pelo valoroso serviço prestado à Câmara dos Deputados!'
-	},
-	{
-		id: 4,
-		nome: 'Fabio Almeida Lopes',
-		areaOuInstituicao: 'Consultoria Legislativa - Conle',
-		depoimento: 'As diferentes vertentes de capacitação em Processo Legislativo promovidas pelo CEFOR são ferramentas silenciosas que promovem uma contínua e significativa transformação na Casa. Ao oferecer um ambiente formativo de debate teórico e prático sobre o <em>métier</em> central da Câmara dos Deputados, possibilita não apenas ao quadro permanente mas, de forma crucial também aos servidores temporários, uma trilha de desenvolvimento profissional e pessoal. Assim, os gestores das áreas relacionadas ao processo legislativo podem contar com um corpo técnico capacitado. Ao mesmo tempo, o ambiente formativo também cria uma cultura de reflexão que, em última análise, ajuda a promover a legitimidade das normas produzidas pelo Parlamento.'
-	},
-	{
-		id: 5,
-		nome: 'Eliana Dias Ramagem',
-		areaOuInstituicao: 'Coordenação de Acessibilidade',
-		depoimento: 'O trabalho desenvolvido pelo CEFOR vai muito além da formação e do aperfeiçoamento técnico dos servidores da Casa.  Ações voltadas para a formação e o desenvolvimento interpessoal, para o debate e a troca de experiências sobre temas como bem-estar, qualidade de vida, sustentabilidade, acessibilidade e inclusão são práticas recorrentes desse Centro e que são de fundamental importância para o desenvolvimento de nossa cidadania organizacional. Os trabalhos são desenvolvidos em parceria com os órgãos gestores e os temas são selecionados sempre sob a ótica de diagnósticos realizados por meio de pesquisas, como a Pesquisa de Clima. Por isso, o CEFOR apresenta soluções de aprendizagem adequadas e conteúdo acessível a diferentes públicos.'
-	},
-	{
-		id: 6,
-		nome: 'Guilherme Curi',
-		areaOuInstituicao: 'Departamento de Polícia Legislativa - Depol',
-		depoimento: 'Durante esses 25 anos, estive sempre bem próximo do CEFOR. Inicialmente participei como aluno; mais tarde como voluntário em seus serviços administrativos e, posteriormente, como facilitador e docente. Em 2014 assumi o Escritório de Treinamento e Projetos do Depol. Até aquele momento, inexistia uma área interna que tivesse por finalidade dar suporte ao CEFOR na formação, desenvolvimento e treinamento de nossos agentes. E em pouco tempo nos tornamos um dos maiores clientes do CEFOR. Percebo que todo o aprimoramento recente de nossa polícia - que acredito ser uma das mais qualificadas do Brasil - está ligado às ações de capacitação patrocinadas e apoiadas pelo CEFOR, que primam sempre pela qualidade, profissionalismo, amizade, atenção e inovação. Sou um profundo admirador desse órgão, percebendo-o como um lugar de prosperidade e progresso dentro da Câmara dos Deputados. Parabéns ao CEFOR e a todos os seus colaboradores por todo esse sucesso!'
-	},
-	{
-		id: 7,
-		nome: 'Florian Augusto Coutinho Madruga',
-		areaOuInstituicao: 'Associação Brasileira das Escolas do Legislativo e de Contas - ABEL',
-		depoimento: 'Cefor. 25 anos aperfeiçoando a democracia e construindo cidadania. A Educação como instituição integrante dos Parlamentos deu seus primeiros passos há trinta anos em Minas Gerais. Ao longo do tempo, muitas escolas surgiram e a Câmara dos Deputados deu um passo largo ao criar o Centro de Formação, Treinamento e Aperfeiçoamento. Lá se vão 25 anos... Em 2003, criamos a ABEL e o Cefor se tornou um parceiro essencial na missão de consolidar a Educação Legislativa como um alicerce do aperfeiçoamento da Democracia. E mais: hoje contamos com seu apoio às Escolas Legislativas, que já somam mais de 300 em todo o país. Muito me honra testemunhar o sucesso dessa instituição. Parabéns aos parlamentares incentivadores da Educação Legislativa, aos dirigentes, gestores e a todos os servidores que fazem do Cefor um modelo para o Brasil.'
-	},
-	{
-		id: 8,
-		nome: 'Diogo Costa',
-		areaOuInstituicao: 'Escola Nacional de Administração Pública - Enap',
-		depoimento: 'A Enap, escola de governo, parabeniza o Cefor pelos 25 anos dedicados à educação de servidores, que se traduz na ampliação da capacidade de resposta institucional aos desafios colocados pela democracia. Nós compartilhamos os mesmos desafios e temos parceria sólida há alguns anos, como o compartilhamento dos espaços físicos, quando a Enap recebeu os participantes dos Programas Estágio-Visita e Missão Pedagógica no Parlamento, bem como a recente assinatura de Protocolo de Intenções para oferta unificada de cursos a distância na Escola Virtual de Governo (EVG). Parabéns pelo caminho construído até aqui. Seguimos juntos na construção de um país justo e democrático.'
-	},
-	{
-		id: 9,
-		nome: 'Patrícia Nogueira',
-		areaOuInstituicao: 'Escola do Legislativo do Distrito Federal',
-		depoimento: 'A Escola do Legislativo da Câmara Legislativa do Distrito Federal (Elegis) vem cumprimentar os nossos parceiros do Cefor pelos seus 25 anos de trabalho. Só temos de enaltecer os seus bons serviços prestados à sociedade e ao fortalecimento da democracia em nosso país, por meio da educação legislativa. Como parceiros de primeira hora, somos testemunhas do alto nível de seus cursos de pós-graduação. Nossos servidores - e também os de outras instituições parceiras - muito têm ganhado com a proficiência de seus programas. Fica aqui o reconhecimento público da ELEGIS e da Câmara Legislativa do Distrito Federal. Vida longa ao Cefor!'
-	},
-	{
-		id: 10,
-		nome: 'Ana Cristina Melo de Pontes Botelho',
-		areaOuInstituicao: 'Instituto Serzedello Corrêa (ISC-TCU)',
-		depoimento: 'Para nós do Instituto Serzedello Corrêa é uma grande satisfação poder caminhar ao lado do Cefor. Compartilhamos a jornada de construir e disseminar conhecimentos para que servidores públicos e cidadãos tenham cada vez mais ferramentas para contribuir com a sociedade. Por meio do apoio mútuo, pudemos ofertar ações educacionais de excelência nos últimos anos, favorecendo o desenvolvimento de pessoas e o fortalecimento de nossas instituições. Por isso, desejamos que essa parceria continue florescendo nos próximos anos!'
-	}
-];
+import useFetch from "./useFetch";
 
 function shuffleArray(array) {
 	for (let i = array.length - 1; i > 0; i--) {
@@ -73,25 +11,27 @@ function shuffleArray(array) {
 	}
 }
 
-shuffleArray(despoimentosJSON);
-
-const listaDepoimentos = despoimentosJSON.map((item, index) => {
-	let classeCor = 'cor-' + ((index % 4) + 1); // Cor do box sequencial
-	// let classeCor = 'cor-' + ((item.id % 4) + 1); // Cor do box fixo por item
-
-	return (
-		<div key={ item.id } className="card-depoimento mx-0 ms-lg-4">
-			<div className={ 'aspas-duplas ' + classeCor }>“</div>
-			<div className={ 'conteudo ' + classeCor }>
-				<span className="depoimento" dangerouslySetInnerHTML={ { __html: item.depoimento } } />
-				<br /><br />
-				<span className="nome">{ item.nome }</span>
-				<br />
-				<span className="area-ou-instituicao">{ item.areaOuInstituicao }</span>
+function listarDepoimentos(items_json) {
+	const listaDepoimentos = items_json.map((item, index) => {
+		let classeCor = 'cor-' + ((index % 4) + 1); // Cor do box sequencial
+		// let classeCor = 'cor-' + ((item.id % 4) + 1); // Cor do box fixo por item
+	
+		return (
+			<div key={ item.id } className="card-depoimento mx-0 ms-lg-4">
+				<div className={ 'aspas-duplas ' + classeCor }>“</div>
+				<div className={ 'conteudo ' + classeCor }>
+					<span className="depoimento" dangerouslySetInnerHTML={ { __html: item.depoimento } } />
+					<br /><br />
+					<span className="nome">{ item.nome }</span>
+					<br />
+					<span className="area-ou-instituicao">{ item.areaOuInstituicao }</span>
+				</div>
 			</div>
-		</div>
-	)
-});
+		)
+	});
+
+	return listaDepoimentos;
+}
 
 const responsive = {
 	superLargeDesktop: {
@@ -113,13 +53,25 @@ const responsive = {
 	}
 };
 
-export default () => (
-	<Carousel
-		responsive={ responsive }
-		arrows={ false }
-		renderButtonGroupOutside={true}
-		customButtonGroup={ <BotoesNavCarousel /> }
-	>
-		{ listaDepoimentos }
-	</Carousel>
-);
+export default () => {
+	const [error, isLoaded, items] = useFetch('depoimentos.json');
+
+	if (error) {
+		return <div>Erro: { error.message }</div>;
+	} else if (!isLoaded) {
+		return <div>Carregando...</div>;
+	} else {
+		shuffleArray(items);
+
+		return (
+			<Carousel
+				responsive={ responsive }
+				arrows={ false }
+				renderButtonGroupOutside={ true }
+				customButtonGroup={ <BotoesNavCarousel /> }
+			>
+				{ listarDepoimentos(items) }
+			</Carousel>
+		);
+	}
+}
