@@ -80,7 +80,7 @@ const listaDepoimentos = despoimentosJSON.map((item, index) => {
 	// let classeCor = 'cor-' + ((item.id % 4) + 1); // Cor do box fixo por item
 
 	return (
-		<div key={ item.id } className="card-depoimento">
+		<div key={ item.id } className="card-depoimento mx-0 ms-lg-4">
 			<div className={ 'aspas-duplas ' + classeCor }>“</div>
 			<div className={ 'conteudo ' + classeCor }>
 				<span className="depoimento" dangerouslySetInnerHTML={ { __html: item.depoimento } } />
@@ -96,7 +96,7 @@ const listaDepoimentos = despoimentosJSON.map((item, index) => {
 const responsive = {
 	superLargeDesktop: {
 		// the naming can be any, depends on you.
-		breakpoint: { max: 4000, min: 2000 },
+		breakpoint: { max: 4000, min: 3001 },
 		items: 4
 	},
 	desktop: {
@@ -104,11 +104,11 @@ const responsive = {
 		items: 2
 	},
 	tablet: {
-		breakpoint: { max: 1320, min: 896 },
+		breakpoint: { max: 1319, min: 992 },
 		items: 2
 	},
 	mobile: {
-		breakpoint: { max: 896, min: 0 },
+		breakpoint: { max: 991, min: 0 },
 		items: 1
 	}
 };
