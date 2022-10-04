@@ -284,23 +284,6 @@
   </div>
 
   <script type="module" src="/src/main.jsx"></script>
-  <script>
-    function rolarParaElemento(el, topo = 0) {
-      var element = document.getElementById(el);
-      var elementPosition = element.getBoundingClientRect().top;
-      var offsetPosition = elementPosition + window.pageYOffset - topo;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-
-    document.addEventListener('keypress', (tecla) => {
-      if (tecla.key === "e") {
-        rolarParaElemento("videos", 100);
-      }
-    });
-  </script>
 </body>
 
 </html>
