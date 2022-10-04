@@ -547,20 +547,21 @@ em {
     .texto-titulo-secao {
         color: var(--verde-3);
     }
-
+    
     background: {
         image: url("/src/assets/folhas.png");
-        size: auto 100%;
-        position: 96% center;
+        size: auto 75%;
+        position: bottom right -100px;
         repeat: no-repeat;
         color: var(--azul-1);
     }
 
-    .redes-sociais {
-        @include media-breakpoint-down(md) {
-            width: 500px;
-        }
+    @include media-breakpoint-up(lg) {
+        background-size: auto 100%;
+        background-position: 96% center;
+    }
 
+    .redes-sociais {
         @include media-breakpoint-between(md, xxl) {
             width: 690px;
         }
