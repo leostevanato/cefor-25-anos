@@ -80,6 +80,11 @@ const linhaTempoCefor = [
 		"cardDetailedText": ""
 	},
 	{
+		"title": 2007,
+		"cardTitle": "O Cefor ganha espaço próprio, em um novo prédio no Complexo Avançado da Câmara dos Deputados",
+		"cardDetailedText": ""
+	},
+	{
 		"title": 2008,
 		"cardTitle": "Criação da <b>Coordenação de Educação para Democracia</b>",
 		"cardDetailedText": ""
@@ -217,7 +222,7 @@ var linhaTempoJSON = [];
 
 linhaTempoCefor.forEach((item, index) => {
 	let tituloCard = item.cardTitle.replace(/<\/?b>/gi, '').toUpperCase().replace(/(<\/?)(em)(>)/gi, '$1em$3');
-	
+
 	tituloCard = tituloCard.replace(/EAD/g, 'EaD');
 
 	let descricaoCard = '';
