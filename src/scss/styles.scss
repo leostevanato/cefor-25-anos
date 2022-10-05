@@ -246,12 +246,13 @@ em {
                     display: flex;
 
                     .aspas-duplas {
-                        font-size: 5rem;
+                        font-size: 3rem;
                         font-weight: 700;
-                        line-height: 72%;
+                        line-height: 85%;
 
                         @include media-breakpoint-up(sm) {
                             font-size: 11.25rem;
+                            line-height: 72%;
                         }
 
                         &.cor-1 {
@@ -272,9 +273,13 @@ em {
                     }
 
                     .conteudo {
-                        padding: 26px 12px;
+                        padding: 12px;
                         margin-top: 4px;
                         letter-spacing: 0.06rem;
+
+                        @include media-breakpoint-up(sm) {
+                            padding: 26px 12px;
+                        }
 
                         &.cor-1 {
                             background-color: var(--verde-1);

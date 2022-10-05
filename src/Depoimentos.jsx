@@ -37,15 +37,15 @@ const responsive = {
 	superLargeDesktop: {
 		// the naming can be any, depends on you.
 		breakpoint: { max: 4000, min: 3001 },
-		items: 4
+		items: 2
 	},
 	desktop: {
 		breakpoint: { max: 3000, min: 1320 },
-		items: 2
+		items: 1
 	},
 	tablet: {
 		breakpoint: { max: 1319, min: 992 },
-		items: 2
+		items: 1
 	},
 	mobile: {
 		breakpoint: { max: 991, min: 0 },
@@ -69,6 +69,9 @@ export default () => {
 				arrows={ false }
 				renderButtonGroupOutside={ true }
 				customButtonGroup={ <BotoesNavCarousel /> }
+				beforeChange={(nextSlide, { currentSlide }) => {
+					document.getElementById("depoimentos").scrollIntoView();
+				}}
 			>
 				{ listarDepoimentos(items) }
 			</Carousel>
