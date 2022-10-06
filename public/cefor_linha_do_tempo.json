@@ -1,4 +1,4 @@
-const linhaTempoCefor = [
+[
 	{
 		"title": 1971,
 		"cardTitle": "Criada a <b>Coordenação de Seleção e Treinamento</b> para atender exclusivamente os servidores da Câmara dos Deputados",
@@ -204,41 +204,4 @@ const linhaTempoCefor = [
 		"cardTitle": "Canal da Escola da Câmara no Youtube supera os <b>20 mil inscritos</b>",
 		"cardDetailedText": ""
 	}
-];
-
-function converterHTMLEntities(string) {
-	const htmlEntities = {
-		"&": "&amp;",
-		"<": "&lt;",
-		">": "&gt;",
-		'"': "&quot;",
-		"'": "&apos;"
-	};
-
-	return string.replace(/([&<>\"'])/g, match => htmlEntities[match]);
-}
-
-var linhaTempoJSON = [];
-
-linhaTempoCefor.forEach((item, index) => {
-	let tituloCard = item.cardTitle.replace(/<\/?b>/gi, '').toUpperCase().replace(/(<\/?)(em)(>)/gi, '$1em$3');
-
-	tituloCard = tituloCard.replace(/EAD/g, 'EaD');
-
-	let descricaoCard = '';
-
-	if (item.cardDetailedText != "") {
-		// descricaoCard = converterHTMLEntities(item.cardDetailedText);
-		descricaoCard = item.cardDetailedText;
-	}
-
-	linhaTempoJSON.push({
-		"id": index,
-		"linhaTitulo": item.title.toString(),
-		"cardTiulo": tituloCard,
-		// "cardDescricao": (item.cardDetailedText != "")? item.cardDetailedText : ''
-		"cardDescricao": descricaoCard
-	});
-});
-
-export { linhaTempoJSON };
+]
