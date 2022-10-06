@@ -1,25 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
 import './js/main.js';
-import LinhaDoTempo from './LinhaDoTempo';
-import Depoimentos from './Depoimentos';
-import CeforEmNumeros from './CeforEmNumeros';
-import Videos from './Videos';
 
-ReactDOM.createRoot(document.getElementById('depoimentos-cefor')).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Depoimentos />
+    <App />
   </React.StrictMode>
-);
-
-ReactDOM.createRoot(document.getElementById('timeline-cefor')).render(
-  <LinhaDoTempo />
-);
-
-ReactDOM.createRoot(document.getElementById('cefor-em-numeros-carousel')).render(
-  <CeforEmNumeros />
-);
-
-ReactDOM.createRoot(document.getElementById('videos-lista')).render(
-  <Videos />
 );
