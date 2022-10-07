@@ -1,5 +1,4 @@
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import React from 'react';
 import BotoesNavCarousel from "./BotoesNavCarouselDepoimentos";
 import useFetch from "./useFetch";
