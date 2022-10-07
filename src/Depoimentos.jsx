@@ -3,6 +3,18 @@ import Carousel from "react-multi-carousel";
 import BotoesNavCarousel from "./BotoesNavCarouselDepoimentos";
 import useFetch from "./useFetch";
 
+function pixelToRem(pixel) {
+	let rem = 0.0625 * pixel;
+
+	return rem;
+}
+
+function remToPixel(rem) {
+	let pixel = rem / 0.0625;
+
+	return pixel;
+}
+
 function shuffleArray(array) {
 	for (let i = array.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
@@ -60,9 +72,10 @@ export default () => {
 		return <div>Carregando...</div>;
 	} else {
 		shuffleArray(items);
-
+		
 		return (
 			<Carousel
+				additionalTransfrom={ -remToPixel(1.5) }
 				responsive={ responsive }
 				arrows={ false }
 				renderButtonGroupOutside={ true }
