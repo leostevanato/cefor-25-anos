@@ -54,7 +54,7 @@ const responsive = {
 };
 
 export default () => {
-	const [error, isLoaded, items] = useFetch('depoimentos.json');
+	const [error, isLoaded, items] = useFetch('cefor_depoimentos.json');
 
 	if (error) {
 		return <div>Erro: { error.message }</div>;
