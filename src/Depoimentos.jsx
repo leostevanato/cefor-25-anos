@@ -1,5 +1,5 @@
-import Carousel from "react-multi-carousel";
 import React from 'react';
+import Carousel from "react-multi-carousel";
 import BotoesNavCarousel from "./BotoesNavCarouselDepoimentos";
 import useFetch from "./useFetch";
 
@@ -13,7 +13,6 @@ function shuffleArray(array) {
 function listarDepoimentos(items_json) {
 	const listaDepoimentos = items_json.map((item, index) => {
 		let classeCor = 'cor-' + ((index % 4) + 1); // Cor do box sequencial
-		// let classeCor = 'cor-' + ((item.id % 4) + 1); // Cor do box fixo por item
 	
 		return (
 			<div key={ item.id } className="card-depoimento mx-0 ms-lg-4">
@@ -68,7 +67,7 @@ export default () => {
 				arrows={ false }
 				renderButtonGroupOutside={ true }
 				customButtonGroup={ <BotoesNavCarousel /> }
-				beforeChange={(nextSlide, { currentSlide }) => {
+				afterChange={(nextSlide, { currentSlide }) => {
 					document.getElementById("depoimentos").scrollIntoView();
 				}}
 			>
