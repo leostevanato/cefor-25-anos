@@ -75,7 +75,7 @@ export default () => {
 		
 		return (
 			<Carousel
-				additionalTransfrom={ -remToPixel(1.5) }
+				// additionalTransfrom={ -remToPixel(1.5) }
 				responsive={ responsive }
 				arrows={ false }
 				renderButtonGroupOutside={ true }
