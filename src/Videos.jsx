@@ -24,7 +24,7 @@ export default () => {
 					setIsLoaded(true);
 					setError(error);
 				}
-			)
+			);
 	}, []);
 
 	if (error) {
@@ -36,7 +36,7 @@ export default () => {
 			<div className="row row-cols-1 row-cols-xl-2 mx-auto justify-content-center">
 				{
 					items.map(item => {
-						let tipo = (item.disponivel) ? <><span>VÍDEO</span> | <span>{ item.tipo }</span></> : <span>EM BREVE</span>;
+						let tipo = <><span>VÍDEO</span>{ item.tipo && <> | <span>{ item.tipo }</span></> }</>;
 							
 						return (
 							<div key={ item.id } className="position-relative col bg-white">
@@ -44,12 +44,14 @@ export default () => {
 
 								<p className="texto-coluna">{ item.titulo }</p>
 
-								{ //item.idYoutube &&
+								{ item.idYoutube ?
 									<div className="link-assistir-no-youtube position-absolute">
 										<a href={ "https://www.youtube.com/watch?v=" + item.idYoutube } target="_blank">
 											<img className="align-text-top me-1" src={ IconeYoutube } alt="Ícone do Youtube" /> ASSISTIR »
 										</a>
 									</div>
+									:
+									<p className="fs-3 fw-bold w-50 mx-auto mt-7">EM BREVE</p>
 								}
 							</div>
 						)
