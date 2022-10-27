@@ -14,7 +14,6 @@
     "codyhouse-framework": "^3.0.6",
     "mdb-ui-kit": "^5.0.0",
     "react": "^18.2.0",
-    "react-chrono": "^1.19.1",
     "react-dom": "^18.2.0",
     "react-multi-carousel": "^2.8.2"
   },
