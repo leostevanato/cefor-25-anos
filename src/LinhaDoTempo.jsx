@@ -126,11 +126,13 @@ export default () => {
               <span className="cd-h-timeline__filling-line" aria-hidden="true"></span>
             </div>
           </div>
+        </div>
 
-          <ul>
-            <li><ButtonSeta className="btn seta esquerda border-0 cd-h-timeline__navigation cd-h-timeline__navigation--prev cd-h-timeline__navigation--inactive" classDisable="cd-h-timeline__navigation--inactive" /></li>
-            <li><ButtonSeta className="btn seta direita border-0 cd-h-timeline__navigation cd-h-timeline__navigation--next" classDisable="cd-h-timeline__navigation--inactive" /></li>
-          </ul>
+        <div className="timeline_controles">
+          <ButtonSeta className="btn seta esquerda border-0 cd-h-timeline__navigation cd-h-timeline__navigation--prev cd-h-timeline__navigation--inactive" classDisable="cd-h-timeline__navigation--inactive" tipo="dupla" />
+          <ButtonSeta className="btn seta esquerda border-0 cd-h-item__navigation cd-h-item__navigation--prev cd-h-item__navigation--inactive" classDisable="cd-h-item__navigation--inactive" />
+          <ButtonSeta className="btn seta direita border-0 cd-h-item__navigation cd-h-item__navigation--next" classDisable="cd-h-item__navigation--inactive" />
+          <ButtonSeta className="btn seta direita border-0 cd-h-timeline__navigation cd-h-timeline__navigation--next" classDisable="cd-h-timeline__navigation--inactive" tipo="dupla" />
         </div>
 
         <div className="cd-h-timeline__events container">
