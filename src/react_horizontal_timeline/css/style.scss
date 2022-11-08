@@ -60,14 +60,20 @@
 
   .cd-h-timeline__container {
     position: relative;
-    height: 118px;
+    height: 88px;
+    // height: 118px;
     // max-width: 800px;
   }
 
   .cd-h-timeline__dates {
     position: relative;
     height: 100%;
-    margin: 0 40px;
+    margin: 0;
+    
+    @media (min-width: 768px) {
+      margin: 0 40px;
+    }
+    
     overflow: hidden;
 
     &::after,
@@ -170,6 +176,7 @@
     border-color: var(--verde-3);
   }
 
+  .cd-h-item__navigation,
   .cd-h-timeline__navigation {
     // arrows to navigate the timeline
     position: absolute;
@@ -201,18 +208,21 @@
     // }
   }
 
+  .cd-h-item__navigation--prev,
   .cd-h-timeline__navigation--prev {
     left: 0;
   }
 
+  .cd-h-item__navigation--next,
   .cd-h-timeline__navigation--next {
     right: 0;
     transform: translateY(-50%) rotate(180deg);
   }
 
+  .cd-h-item__navigation--inactive,
   .cd-h-timeline__navigation--inactive {
     cursor: not-allowed;
-    opacity: 0.2
+    opacity: 0.2;
 
     // &::after {
     //   background-position: 0 -16px;
@@ -221,6 +231,29 @@
     // &:hover {
     //   border-color: base.lightness(var(--cd-color-4), 0.9);
     // }
+  }
+
+  .timeline_controles {
+    position: relative;
+    width: 264px;
+    height: 52px;
+    margin: 24px auto;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+
+    .cd-h-item__navigation,
+    .cd-h-timeline__navigation {
+      position: unset;
+      padding: 0;
+      top: 0;
+      transform: translateY(0);
+    }
+  
+    .cd-h-item__navigation--next,
+    .cd-h-timeline__navigation--next {
+      transform: translateY(0) rotate(180deg);
+    }
   }
 
   .cd-h-timeline__events {

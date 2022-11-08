@@ -3,8 +3,10 @@ const carregarScript = (nome, path, callback) => {
 	const existingScript = document.getElementById(scriptID);
 
 	if (!existingScript) {
+		const arquivo = path + nome + '.js?t=' + __TIME_DA_BUILD__; // __TIME_DA_BUILD__ para evitar cache do script
 		const script = document.createElement('script');
-		script.src = path + nome + '.js';
+
+		script.src = arquivo;
 		script.id = scriptID;
 		document.body.appendChild(script);
 

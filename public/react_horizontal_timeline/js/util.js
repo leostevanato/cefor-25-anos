@@ -76,7 +76,6 @@ Util.setHeight = function(start, to, element, duration, cb) {
 /* 
 	Smooth Scroll
 */
-
 Util.scrollTo = function(final, duration, cb) {
   var start = window.scrollY || document.documentElement.scrollTop,
       currentTime = null;
@@ -100,7 +99,6 @@ Util.scrollTo = function(final, duration, cb) {
 /* 
   Focus utility classes
 */
-
 //Move focus to an element
 Util.moveFocus = function (element) {
   if( !element ) element = document.getElementsByTagName("body")[0];
@@ -114,7 +112,6 @@ Util.moveFocus = function (element) {
 /* 
   Misc
 */
-
 Util.getIndexInArray = function(array, el) {
   return Array.prototype.indexOf.call(array, el);
 };
